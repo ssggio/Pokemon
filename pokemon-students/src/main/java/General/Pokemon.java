@@ -98,7 +98,10 @@ public class Pokemon implements Serializable  {
 
 	// TODO: US-PKM-O-4C
 	private void levelUp() {
-
+		r.nextInt(maxHp);
+		if (evolveCheck()) {
+			evolve();
+		}
 	}
 
 	// TODO: US-PKM-O-4E
