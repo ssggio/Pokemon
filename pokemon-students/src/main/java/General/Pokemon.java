@@ -93,7 +93,13 @@ public class Pokemon implements Serializable  {
 	}
 	// TODO: US-PKM-O-4D
 	public void gainXp(int amount) {
-
+		if (amount + currentXp >= xpToNext) {
+			levelUp();
+			int remainingXp = (currentXp + amount) - xpToNext;
+		} else {
+			setCurrentXp(currentXp = currentXp + amount);
+			status();
+		}
 	}
 
 	// TODO: US-PKM-O-4C
