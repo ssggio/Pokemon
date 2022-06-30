@@ -108,7 +108,12 @@ public class Pokemon implements Serializable  {
 
 	// TODO: US-PKM-O-4
 	public void attack(Pokemon otherPokemon, Attack attack) {
-
+		int power = attack.getPower();
+		if (otherPokemon.getCurrentHp() - power < 0) {
+			otherPokemon.setCurrentHp(0);
+		} else {
+			otherPokemon.setCurrentHp(otherPokemon.getCurrentHp() - power);
+		}
 	}
 
 	// TODO: US-PKM-O-4B
