@@ -199,6 +199,6 @@ public class Game {
 
 	// TODO: US-PKM-O-2:
 	private static void quit() {
-
+		System.exit(0);
 	}
 }
