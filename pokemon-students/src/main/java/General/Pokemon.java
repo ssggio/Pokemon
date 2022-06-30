@@ -89,58 +89,31 @@ public class Pokemon implements Serializable  {
 
 	// TODO: US-PKM-O-4E
 	private void evolve() {
-    this.pokedata = pokedata.evolvesIn;
+
 	}
 	// TODO: US-PKM-O-4D
 	public void gainXp(int amount) {
-		if (amount + currentXp >= xpToNext) {
-			levelUp();
-			int remainingXp = (currentXp + amount) - xpToNext;
-			gainXp(remainingXp);
-		} else {
-			this.setCurrentXp(currentXp + amount);
-			status();
-		}
+
 	}
 
 	// TODO: US-PKM-O-4C
 	private void levelUp() {
-		int hpIncrease = r.nextInt(100);
-		setLevel(level +1);
-		setCurrentXp(0);
-		setMaxHp(maxHp + hpIncrease);
-		setCurrentHp(currentHp + hpIncrease);
-		if (evolveCheck() == true) {
-			evolve();
-		}
+
 	}
 
 	// TODO: US-PKM-O-4E
 	private boolean evolveCheck() {
-		if (pokedata.evolvesIn != null && level >= pokedata.evolutionLevel) {
-			return true;
-		} else {
-			return false;
-		}
+		return false;
 	}
 
 	// TODO: US-PKM-O-4
 	public void attack(Pokemon otherPokemon, Attack attack) {
-		int power = attack.getPower();
-		if (otherPokemon.getCurrentHp() - power < 0) {
-			otherPokemon.setCurrentHp(0);
-		} else {
-			setCurrentHp(otherPokemon.getCurrentHp() - power);
-		}
+
 	}
 
 	// TODO: US-PKM-O-4B
 	public Attack getRandomAttack() {
-		List<Attack> attackList = getAttacks();
-		int attackSize = attackList.size();
-		int randomAttackIndex = r.nextInt(attackSize);
-		Attack randomAttack = attackList.get(randomAttackIndex);
-		return randomAttack;
+		return null;
 	}
 
 	public double getHpPercentage() {
@@ -158,11 +131,7 @@ public class Pokemon implements Serializable  {
 
 	// TODO: US-PKM-O-5
 	public boolean isKnockout() {
-		if (currentHp <= 0) {
-			return true;
-		} else {
-			return false;
-		}
+	return false;
 	}
 
 }

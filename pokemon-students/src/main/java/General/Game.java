@@ -128,9 +128,7 @@ public class Game {
 
 	// TODO: US-PKM-O-6
 	private static void findAndBattlePokemon() {
-		Pokemon randomPokemon = trainer.findPokemon();
-		Battle battle = trainer.battle(trainer.getActivePokemon(), randomPokemon);
-		battle.start();
+
 	}
 
 	private static Area showTravel() {
@@ -176,74 +174,21 @@ public class Game {
 
 	// TODO: US-PKM-O-1
 	public static Pokemon chooseFirstPokemon(int choice) {
-		if (choice == 0) {
-			System.out.println("Please choose one of these three pokemon");
-			System.out.println("1 ) Charmander");
-			System.out.println("2 ) Bulbasaur");
-			System.out.println("3 ) Squirtle");
-			choice = sc.nextInt();
-		}
-		if (choice == 1) {
-			Pokemon chosenPokemon = new Pokemon(PokemonData.CHARMANDER);
-			chosenPokemon.setLevel(5);
-			trainer.setActivePokemon(chosenPokemon);
-			System.out.println(PokemonData.CHARMANDER.art);
-			System.out.println("");
-			return chosenPokemon;
 
-		} else if (choice == 2) {
-			Pokemon chosenPokemon = new Pokemon(PokemonData.BULBASAUR);
-			chosenPokemon.setLevel(5);
-			trainer.setActivePokemon(chosenPokemon);
-			System.out.println(PokemonData.BULBASAUR.art);
-			System.out.println("");
-			return chosenPokemon;
-
-		} else if (choice == 3) {
-			Pokemon chosenPokemon = new Pokemon(PokemonData.SQUIRTLE);
-			chosenPokemon.setLevel(5);
-			trainer.setActivePokemon(chosenPokemon);
-			System.out.println(PokemonData.SQUIRTLE.art);
-			System.out.println("");
-			return chosenPokemon;
-
-		} else {
-
-		}
 		return null;
 
 	}
-    //casten want dat was de oplossing
-	//public class Cast{
-		
-		//	GymLeader Gymleader = new GymLeader(String, Badge, areas);
-		//      Trainer sup = (Trainer) Gymleader; 
-		// }
-	
+
 
 	// TODO: US-PKM-O-8
 	private static void startGymBattle() {
-		Battle trainerBattle = trainer.challengeTrainer(Game.trainer.getCurrentArea().getGymLeader());
-		if (trainerBattle != null && trainerBattle.getWinner().getOwner().equals(trainer)) {
-			if (trainerBattle.getEnemy().getOwner().getClass().equals(GymLeader.class)) {
-				Pokemon enemyPokemon = trainerBattle.getEnemy();
-				Trainer gymLeader = enemyPokemon.getOwner();
-				((GymLeader)gymLeader).setDefeated(true);
-				awardBadge(((GymLeader)gymLeader).getBadge().getName());
-				Area gymLeaderArea = gymLeader.getCurrentArea();
-				Area nextArea = gymLeaderArea.getNextArea();
-				if (nextArea != null) {
-					nextArea.setUnlocked(true);
-				}
-			}
-		}
+
 
 	}
 
 	// TODO: US-PKM-O-9
 	public static void awardBadge(String badgeName) {
-		Badge badgename = new Badge(badgeName);
-		trainer.addBadge(badgename);
+
 	}
 
 	public static void gameOver(String message) {
@@ -254,6 +199,6 @@ public class Game {
 
 	// TODO: US-PKM-O-2:
 	private static void quit() {
-		System.exit(0);
+
 	}
 }

@@ -59,23 +59,8 @@ public class Area {
 
 	// TODO: US-PKM-O-6
 	public Pokemon getRandomPokemonFromArea(int level) {
-		List<PokemonData> pokeData = Arrays.asList(PokemonData.values());
-		ArrayList<PokemonData> collect = new ArrayList<PokemonData>();
-		for (PokemonData p : pokeData) {
-			if (containsPokemon.contains(p.pokemonType)) {
-				collect.add(p);
-			}
-			}
-		int randomPokemonIndex = r.nextInt(collect.size());
-		PokemonData randomPokemonData = collect.get(randomPokemonIndex);
-		Pokemon randomPokemon = new Pokemon(randomPokemonData);
-		int lowestLevel = level - 5 > 0? level - 5 : level;
-		int highestLevel = lowestLevel + level;
-		int randomlevel = r.nextInt(highestLevel - lowestLevel);
-		randomPokemon.setLevel(randomlevel);
-		randomPokemon.setMaxHp(randomPokemon.getLevel()*10);
-		randomPokemon.setCurrentHp(randomPokemon.getMaxHp());
-		return randomPokemon;
+
+		return null;
 	}
 
 	public Pokecenter getPokecenter() {
