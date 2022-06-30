@@ -125,7 +125,9 @@ public class Trainer {
 
 	// TODO: US-PKM-O-3
 	public void showPokemonColletion() {
-
+		for(Pokemon p : pokemonCollection) {
+			p.status();
+		}
 	}
 
 	// TODO: US-PKM-O-6
